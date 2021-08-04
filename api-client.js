@@ -6,7 +6,6 @@ export async function getData(pokemon) {
 		console.log("Fetched the pokemon data from the API");
 		return data;
 	} catch (err) {
-		console.log("Error: ", err);
-
+		return console.log("Error: ", err);
 	}
 }

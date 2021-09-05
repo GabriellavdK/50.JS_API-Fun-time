@@ -1,6 +1,9 @@
 import { getData } from "./api-client.js";
+
+const formButton = document.getElementById("button-form")
+formButton.addEventListener('click', event => event.preventDefault());
+
 const pokemonButton = document.getElementsByClassName('pokemon-button')[0];
-const damageButton = document.getElementsByClassName('damage-button')[0];
 
 async function receiveData(pokemon) {
 	try {
@@ -19,8 +22,9 @@ async function receiveData(pokemon) {
 const addPokemonToHtml = (data) => {
 	const pokemonSection = document.getElementsByClassName('pokemon-picture')[0];
 	const newTitle = document.createElement('h1');
-	const newText = document.createElement('p');
 	const newImg = document.createElement('img');
+	const searchField = document.createElement('input');
+	const searchButton = document.createElement('button')
 	const id = data.id;
 	let errorNumbers = [10061, 10080, 10081, 10082, 10083, 10084, 10085, 10094, 10095, 10096, 10097, 10098,
 		10099, 10116, 10117, 10122, 10121, 10131, 10130, 10132, 10134, 10133, 10135, 10137, 10139, 10138, 10140,
@@ -34,13 +38,15 @@ const addPokemonToHtml = (data) => {
 			return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 		}
 	}
-	pokemonButton.className = 'damage-button';
-	pokemonButton.innerHTML = `This Pokemon gets the most damage by:`;
 	newTitle.innerHTML = `This is: ${data.name}`;
 	newImg.src = imgUrl();
 	newImg.height = 100;
+	searchField.placeholder = "Type the name of your favorite Pokemon here"
+	searchButton.innerHTML = "Search!"
+	pokemonButton.remove();
+	formButton.appendChild(searchField);
+	formButton.appendChild(searchButton);
 	pokemonSection.appendChild(newTitle);
-	pokemonSection.appendChild(newText);
 	pokemonSection.appendChild(newImg);
 }
 
@@ -59,7 +65,5 @@ const addToHtml = () => {
 }
 
 pokemonButton.addEventListener('click', () => receiveData('700'));
-
-// damageButton.addEventListener('click', () => );
 
 

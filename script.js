@@ -1,9 +1,7 @@
 import { getData } from "./api-client.js";
 
-const formButton = document.getElementById("button-form")
-formButton.addEventListener('click', event => event.preventDefault());
-
 const pokemonButton = document.getElementsByClassName('pokemon-button')[0];
+const formButton = document.getElementById("button-form");
 
 async function receiveData(pokemon) {
 	try {
@@ -25,7 +23,7 @@ const addPokemonToHtml = (data) => {
 	const newTitle = document.createElement('h1');
 	const newImg = document.createElement('img');
 	const searchField = document.createElement('input');
-	const searchButton = document.createElement('button')
+	const searchButton = document.createElement('button');
 	const id = data.id;
 	let errorNumbers = [10061, 10080, 10081, 10082, 10083, 10084, 10085, 10094, 10095, 10096, 10097, 10098,
 		10099, 10116, 10117, 10122, 10121, 10131, 10130, 10132, 10134, 10133, 10135, 10137, 10139, 10138, 10140,
@@ -66,6 +64,16 @@ const addToHtml = () => {
 }
 
 const getRandomPokemon = () => Math.floor(Math.random() * 897) + 1;
-
 pokemonButton.addEventListener('click', () => receiveData(getRandomPokemon()));
 
+// Code after clicking the first button 
+formButton.addEventListener('click', (event) => event.preventDefault());
+
+const searchFieldInput = () => {
+	let value = formButton.getElementsByTagName('input')[0].value;
+	let output = value.toLowerCase();
+	console.log(output);
+	return output;
+};
+
+searchButton.addEventListener('click', () => receiveData(searchFieldInput()));

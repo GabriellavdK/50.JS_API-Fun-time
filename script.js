@@ -7,6 +7,7 @@ const pokemonButton = document.getElementsByClassName('pokemon-button')[0];
 
 async function receiveData(pokemon) {
 	try {
+		console.log(pokemon);
 		let data = await getData(pokemon);
 		console.log("Received data from api-client.js file.");
 		data = await data.json();
@@ -64,6 +65,7 @@ const addToHtml = () => {
 	pokemonSection.appendChild(newImg);
 }
 
-pokemonButton.addEventListener('click', () => receiveData('700'));
+const getRandomPokemon = () => Math.floor(Math.random() * 897) + 1;
 
+pokemonButton.addEventListener('click', () => receiveData(getRandomPokemon()));
 

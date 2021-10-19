@@ -1,4 +1,22 @@
-.pokemon-picture {
+body {
+  height: 100%;
+  background-image: url("../images/forest-pokemon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pokemon-button {
+  font-size: 20px;
+  font-weight: 900;
+  padding: 15px;
+  border-radius: 30px;
+  border: solid 7px #003a70;
+  background-color: #ffcb05;
+  -webkit-box-shadow: 0 0 20px #3d7dca;
+          box-shadow: 0 0 20px #3d7dca;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: wrap;
-}/*# sourceMappingURL=style.css.map */
+  margin: 500px auto auto;
+}
+/*# sourceMappingURL=style.css.map */

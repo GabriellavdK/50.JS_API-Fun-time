@@ -1,3 +1,7 @@
+$base-color-button: #ffcb05;
+$border-color-button: #003a70;
+$hover-color-button: #daae02;
+
 body {
 	height: 100%;
 	background-image: url("../images/forest-pokemon.jpg");
@@ -5,14 +9,60 @@ body {
 	background-size: cover;
 }
 
-.pokemon-button {
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 50%;
+	margin: auto;
+}
+
+.pokemon-picture {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	& h1 {
+		color: white;
+		font-size: 50px;
+		text-shadow: 1px 1px 6px black;
+		margin: auto;
+		text-align: center;
+	}
+	& img {
+		width: 100%;
+		margin: auto;
+		padding: 10px;
+	}
+}
+
+button {
 	font-size: 20px;
 	font-weight: 900;
 	padding: 15px;
 	border-radius: 30px;
-	border: solid 7px #003a70;
-	background-color: #ffcb05;
-	box-shadow: 0 0 20px #3d7dca;
+	border: solid 7px $border-color-button;
+	background-color: $base-color-button;
+	box-shadow: 0 0 20px #9cb1ca;
 	display: flex;
-	margin: 500px auto auto;
+	margin: 10px auto auto;
+	&:hover {
+		background-color: $hover-color-button;
+	}
+	& .pokemon-button {
+		margin: 40% auto auto;
+	}
+}
+
+input {
+	width: 350px;
+	font-weight: 900;
+	padding: 10px;
+	border-radius: 30px;
+	border: solid 7px $border-color-button;
+	background-color: $base-color-button;
+	box-shadow: 0 0 20px #9cb1ca;
+	&:hover {
+		background-color: $hover-color-button;
+	}
 }

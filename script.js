@@ -39,7 +39,7 @@ const addPokemonToHtml = (data) => {
 	}
 	newTitle.innerHTML = `This is: ${data.name}`;
 	newImg.src = imgUrl();
-	newImg.height = 100;
+	// newImg.height = 100;
 	searchField.placeholder = "Type the name of your favorite Pokemon here"
 	searchButton.innerHTML = "Search!"
 	pokemonButton.remove();

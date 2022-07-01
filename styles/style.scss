@@ -49,7 +49,7 @@ button {
 	&:hover {
 		background-color: $hover-color-button;
 	}
-	& .pokemon-button {
+	&.pokemon-button {
 		margin: 40% auto auto;
 	}
 }
